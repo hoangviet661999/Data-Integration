@@ -5,3 +5,6 @@
   
 2. Folder DienMayChoLon: chứa bot crawl data máy giặt từ điện máy chợ lớn:
   Run: scrapy crawl crawler -o dmcl.json
+  
+3. Folder NguyenKim: chứa bot crawl data máy giặt từ nguyễn kim:
+  Run: scrapy crawl crawler -o nk.json

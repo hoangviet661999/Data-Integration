@@ -97,3 +97,10 @@ DEFAULT_REQUEST_HEADERS = {
 FEED_EXPORT_ENCODING = 'utf-8'
 
 # dowload file
+
+ITEM_PIPELINES = {'Pico.pipelines.MongoDBPipeline': 300}
+
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "pc"
+MONGODB_COLLECTION = "item_pc"

@@ -8,3 +8,6 @@
   
 3. Folder NguyenKim: chứa bot crawl data máy giặt từ nguyễn kim:
   Run: scrapy crawl crawler -o nk.json
+  
+4. Folder Pico: chứa bot crawl data máy giặt từ pico:
+  Run: scrapy crawl crawler -o pc.json

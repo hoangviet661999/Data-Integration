@@ -1,5 +1,9 @@
 # Data-Integration
 
+Requirements:
+1. scrapy
+2. pymongo
+
 1. Folder DienMayXanh: chứa bot crawl data máy giặt từ điện máy xanh:
   Run: scrapy crawl crawler -o dienmayxanh.json
   

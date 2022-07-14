@@ -9,8 +9,8 @@
       /><br /><br />
       <input
         type="text"
-        placeholder="Hãng"
-        v-model="field.brand"
+        placeholder="Loại sản phẩm: cửa trước, cửa trên"
+        v-model="field.type"
       /><br /><br />
       <input
         type="text"
@@ -54,9 +54,8 @@ export default {
   data() {
     return {
       field: {
-        title: null,
-        city: null,
-        district: null,
+        name: null,
+        type: null,
         minPrice: null,
         maxPrice: null,
         brand: null,
@@ -66,30 +65,29 @@ export default {
     };
   },
   methods: {
-    // async searchData() {
-    //   try {
-    //     console.log(this.field.city)
-    //     const response = await this.$http.post(
-    //       "http://localhost:5000/house-filter",
-    //       {
-    //         giaMin: this.field.minPrice,
-    //         giaMax: this.field.maxPrice,
-    //         tieuDe: this.field.title,
-    //         thanhPho: this.field.city,
-    //         quan: this.field.district,
-    //         dienTichMin: this.field.minSquare,
-    //         dienTichMax: this.field.maxSquare
-    //       }
-    //     );
-    //     console.log(response.data.houselist)
-    //     // JSON responses are automatically parsed.
-    //     this.data = response.data
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // },
+    async searchData() {
+      try {
+        console.log(this.field.city)
+        const response = await this.$http.post(
+          "http://localhost:5000/device-filter",
+          {
+            giaMin: this.field.minPrice,
+            giaMax: this.field.maxPrice,
+            type: this.field.type,
+            name: this.field.name,
+            brand: this.field.brand,
+            loadSize: this.field.loadSize,
+          }
+        );
+        console.log(response.data.deviceList)
+        // JSON responses are automatically parsed.
+        this.data = response.data
+      } catch (error) {
+        console.log(error);
+      }
+    },
     handleFilter() {
-      // this.searchData()
+      this.searchData()
       console.log(this.field);
       this.$emit("pageFilter", this.field);
     },

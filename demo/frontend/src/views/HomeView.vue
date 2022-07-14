@@ -87,11 +87,12 @@ export default {
         const response = await this.$http.post(
           "http://localhost:5000/device-filter",
           {
+            name: field.name,
             minPrice: field.minPrice,
             maxPrice: field.maxPrice,
-            brand: field.title,
-            type: field.city,
-            loadSize: field.district,
+            brand: field.brand,
+            type: field.type,
+            loadSize: field.loadSize,
           }
         );
         console.log(response.data.deviceList);

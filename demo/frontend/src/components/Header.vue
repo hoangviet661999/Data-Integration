@@ -2,13 +2,10 @@
   <div id="bannerimage">
     <div id="header">
       <span>
-        <a href="/home">DI22 <br> <br>Choose your device</a>
-<!--        <h1>TRANG THÔNG TIN BẤT ĐỘNG SẢN</h1>-->
+        <a href="/home">DI22 <br> <br>Your device your choice</a>
       </span>
     </div>
   </div>
-
-<!--    <router-link class="page-link" to="/">Trang thông tin bất động sản</router-link>-->
 </template>
 
 <script>

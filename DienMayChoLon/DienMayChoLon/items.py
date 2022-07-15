@@ -17,5 +17,6 @@ class DienmaycholonItem(scrapy.Item):
     chat_lieu = scrapy.Field()
     kich_thuoc = scrapy.Field()
     hang = scrapy.Field()
+    url = scrapy.Field()
 
     pass

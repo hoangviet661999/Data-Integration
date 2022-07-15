@@ -21,6 +21,7 @@ class Spider(scrapy.Spider):
         item = DienmaycholonItem()
         item['ten'] = response.xpath('//div[@class = "name_pro_detail"]//h1/text()').extract()[0]
         item['gia'] = response.xpath('//div[@class = "price_sale"]//span/text()').extract_first()
+        item['url'] = response.request.url  
         for i in range(len(parameter_list)):
             if parameter_list[i] == 'Loại máy giặt':
                 item['loai_may'] = parameter_list[i+1]
@@ -53,7 +54,7 @@ class Spider(scrapy.Spider):
             if parameter_list[i] == 'Hãng sản xuất':
                 item['hang'] = parameter_list[i+1]
                 break
-
+        
         if Spider.page_number <= 20:
              Spider.page_number += 1
              yield scrapy.Request(url = self.api_url.format(Spider.page_number), callback= self.parse)

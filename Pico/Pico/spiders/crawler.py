@@ -18,6 +18,7 @@ class Spider(scrapy.Spider):
         item = PicoItem()
         item['ten'] = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "widget-header--button-close-icon", " " ))] | //*[contains(concat( " ", @class, " " ), concat( " ", "chat-button--img", " " ))] | //*[contains(concat( " ", @class, " " ), concat( " ", "product-title", " " ))]/text()').extract()[0]
         item['gia'] = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "price", " " ))]//strong/text()').extract_first()
+        item['url'] = response.request.url  
         parameter_list  = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "spec-title", " " ))] | //*[contains(concat( " ", @class, " " ), concat( " ", "spec-content", " " ))]//span/text()').extract()
         for idx in range(len(parameter_list)):
             if 'Loại máy giặt' in parameter_list[idx]:

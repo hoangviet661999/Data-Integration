@@ -25,6 +25,7 @@ class NguyenKimeSpider(scrapy.Spider):
         data = dict()
         title = response.xpath('//h1[@class="product_info_name"]//text()').get()
         price = response.xpath('//span[@class="nk-price-final"]//text()').get()
+        url = response.request.url
         description = response.xpath('//tbody[@id="custom-scroll-popup-tskt"]//text()').getall()
 
         t, d =[], []
@@ -34,6 +35,7 @@ class NguyenKimeSpider(scrapy.Spider):
         
         data['title'] = title
         data['price'] = price
+        data['url'] = url
 
         for i in range(len(t)):
             data[t[i]] = d[i]

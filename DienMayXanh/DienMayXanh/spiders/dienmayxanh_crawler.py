@@ -22,6 +22,7 @@ class Spider(scrapy.Spider):
         item = DienmayxanhItem()
         item['ten'] = name.replace('Thông số kỹ thuật', '')
         item['gia'] = price
+        item['url'] = response.request.url  
         item['loai_may'] = parameter_list.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "active", " " ))]//li[(((count(preceding-sibling::*) + 1) = 1) and parent::*)]//div[@class="liright"]//span/text()').extract()
         item['khoi_luong_giat'] = parameter_list.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "active", " " ))]//li[(((count(preceding-sibling::*) + 1) = 2) and parent::*)]//div[@class="liright"]//span/text()').extract()
         item['kieu_dong_co'] = parameter_list.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "active", " " ))]//li[(((count(preceding-sibling::*) + 1) = 3) and parent::*)]//div[@class="liright"]//span/text()').extract()

@@ -18,3 +18,4 @@ class DienmayxanhItem(scrapy.Item):
     chat_lieu = scrapy.Field()
     kich_thuoc_va_khoi_luong = scrapy.Field()
     hang = scrapy.Field()
+    url = scrapy.Field()

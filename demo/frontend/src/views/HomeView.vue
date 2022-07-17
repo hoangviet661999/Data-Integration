@@ -145,7 +145,7 @@ export default {
 .box {
   background-color: white;
   display: flex;
-  margin-left: 15em;
+  margin-left: 5em;
   margin-right: 15em;
   margin-top: 5em;
   border-radius: 10px;

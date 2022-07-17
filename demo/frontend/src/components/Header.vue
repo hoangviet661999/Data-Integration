@@ -2,7 +2,7 @@
   <div id="bannerimage">
     <div id="header">
       <span>
-        <a href="/home">DI22 <br> <br>Your device your choice</a>
+        <a href="/home"> <h2>DI22</h2> <br>Your device your choice</a>
       </span>
     </div>
   </div>
@@ -48,9 +48,13 @@ export default {
 }
 #header {
   height: auto;
-  padding: 100px 100px;
+  padding: 50px 50px;
   margin-top: 0;
   text-align: center;
+}
+
+h2 {
+  font-weight: bolder;
 }
 /*h1 {*/
 /*  color: white;*/
@@ -59,7 +63,7 @@ export default {
 /*}*/
 a {
   color: white;
-  font-family: Arial;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: bold;
   font-size: 30px;
   text-decoration: none;

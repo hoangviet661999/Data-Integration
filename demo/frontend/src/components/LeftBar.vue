@@ -1,7 +1,7 @@
 <template>
   <div class="left-box">
     <div class="label-input">
-      <h3>Tìm kiếm nâng cao</h3>
+      <h1>Search device</h1>
       <input
         type="text"
         placeholder="Tên sản phẩm"
@@ -11,11 +11,6 @@
         type="text"
         placeholder="Loại sản phẩm: cửa trước, cửa trên"
         v-model="field.type"
-      /><br /><br />
-      <input
-        type="text"
-        placeholder="Khối lượng giặt"
-        v-model="field.loadSize"
       /><br /><br />
       <label>Lọc theo giá (triệu VNĐ): </label>
       <input
@@ -40,7 +35,7 @@
         placeholder="9, 9.5, ..."
         v-model="field.loadSize"
       /><br /><br />
-      <div class="label-input">
+      <div class="label-input-2">
         <button class="button" @click="handleFilter">Lọc</button>
       </div>
     </div>
@@ -97,12 +92,14 @@ export default {
 
 <style lang="scss" scoped>
 .left-box {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 15px;
   align-items: center;
   //justify-content: center;
   padding-left: 2em;
   padding-right: 13em;
-  width: 20%;
+  width: 25%;
+
   //padding-left: 1em;
   //font-size: 15px;
 }
@@ -111,11 +108,15 @@ export default {
 //  width: 10em;
 //  margin-right: 1em;
 //}
-//label {
-//  font-size: 16px;
-//}
+label {
+  font-size: 16px;
+  align-self: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-top: 20px;
+}
 .button {
-  background: darken(#a3b8ca, 10%);
+  background: darken(#00C590, 10%);
   padding: 10px;
   display: inline-block;
   outline: 0;
@@ -127,10 +128,11 @@ export default {
   color: #f5f5f5;
   cursor: pointer;
   &:hover {
-    background: #89c2c2;
+    background: #00C590;
     transition: all 0.4s ease-in-out;
   }
   margin-left: 8px;
+  width: 100%;
 }
 //.label-input {
 //  display: flex;
@@ -140,11 +142,15 @@ export default {
 .label-input-2 {
   display: flex;
   align-items: flex-start;
-  width: 5em;
+  width: 120%;
 }
 .label-input {
   margin-bottom: 5px;
   width: 330%;
+  h1 {
+    font-size: 30px;
+    text-align: center;
+  }
   input {
     border-radius: 4px;
     height: 40px;
@@ -179,10 +185,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    label {
-      display: block;
-      width: 150px;
-    }
+    
   }
   //&.flex-column {
   //  display: flex;

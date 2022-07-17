@@ -13,7 +13,7 @@
       </p>
       <a :href="'http://localhost:8080/device/'+device._id">
         <div class="buttons">
-          <button class="add">Xem thêm</button>
+          <button class="add">Truy cập</button>
         </div>
       </a>
 
@@ -79,12 +79,13 @@ body {
   background: $white;
   box-shadow: 5px 5px 15px rgba($rose, .5);
   border-radius: 10px;
-  padding: 1em;
+  --padding: 0.5em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .product {
   position: absolute;
-  width: 40%;
+  width: 50%;
   height: 100%;
   top: 10%;
   left: 50%;
@@ -97,6 +98,7 @@ p {
 }
 
 h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1.2em;
   color: $dark;
   margin-top: 1.5em;
@@ -127,7 +129,7 @@ img {
 }
 
 button {
-  background: darken(#A3B8CA, 10%);
+  background: darken(#00C590, 10%);
   padding: 10px;
   display: inline-block;
   outline: 0;
@@ -139,13 +141,13 @@ button {
   color: $white;
   cursor: pointer;
   &:hover {
-    background: $rose;
+    background: #00C590;
     transition: all .4s ease-in-out;
   }
 }
 
 .add {
-  width: 67%;
+  width: 95%;
 }
 
 .like {

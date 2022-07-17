@@ -9,7 +9,7 @@ const deviceSchema = new Schema({
         type: String,
     },
     price: {
-        type: String,
+        type: Number,
     },
     brand: {
         type: String,
@@ -18,10 +18,10 @@ const deviceSchema = new Schema({
         type: String,
     },
     load_size: {
-        type: String
+        type: String,
     },
     website: {
-        type: String
+        type: String,
     }
 });
 

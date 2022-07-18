@@ -3,7 +3,7 @@
   <div class="list" v-for="device in deviceList" v-bind:key="device.name">
   <div class="container">
     <div class="images">
-      <img src="https://images-na.ssl-images-amazon.com/images/S/pv-target-images/02ef2b75bf6c39dec48c636c8dc9d0e4252601800eec9e15c8a266fc46150b00._RI_V_TTW_.jpg" />
+      <img src="../assets/sample.jpg" />
     </div>
     <div class="product">
       <h1>{{device.name}}</h1>
@@ -79,7 +79,7 @@ body {
   background: $white;
   box-shadow: 5px 5px 15px rgba($rose, .5);
   border-radius: 10px;
-  --padding: 0.5em;
+  padding: 0.5em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -122,10 +122,11 @@ h2 {
 }
 
 img {
-  width: 290px;
-  height: 200px;
-  margin-top: 47px;
-  margin-left: 2em;
+  transform: scale(0.7, 0.7);
+  width: auto;
+  height: 350px;
+  --margin-top: 47px;
+  --margin-left: 2em;
 }
 
 button {

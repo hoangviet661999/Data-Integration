@@ -21,7 +21,9 @@ class Spider(scrapy.Spider):
         item = DienmaycholonItem()
         item['ten'] = response.xpath('//div[@class = "name_pro_detail"]//h1/text()').extract()[0]
         item['gia'] = response.xpath('//div[@class = "price_sale"]//span/text()').extract_first()
-        item['url'] = response.request.url  
+        item['url'] = response.request.url
+        item['img'] = response.xpath('//div[@class="item dmcl-gallery"]//img/@data-src').get()
+
         for i in range(len(parameter_list)):
             if parameter_list[i] == 'Loại máy giặt':
                 item['loai_may'] = parameter_list[i+1]

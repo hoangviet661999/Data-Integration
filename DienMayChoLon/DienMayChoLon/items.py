@@ -18,5 +18,5 @@ class DienmaycholonItem(scrapy.Item):
     kich_thuoc = scrapy.Field()
     hang = scrapy.Field()
     url = scrapy.Field()
-
+    img = scrapy.Field()
     pass

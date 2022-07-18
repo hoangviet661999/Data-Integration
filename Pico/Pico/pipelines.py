@@ -27,3 +27,7 @@ class MongoDBPipeline(object):
         if valid:
             self.collection.insert(dict(item))
         return item
+
+class PicoPipeline:
+    def process_item(self, item, spider):
+        return item

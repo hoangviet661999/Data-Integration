@@ -18,14 +18,14 @@ class NguyenKimeSpider(scrapy.Spider):
         links =response.xpath('//div[@class="item-list product"]//a/@href').getall()
         for link in links:
             yield scrapy.Request(link, callback=self.parsePage)
-        # from scrapy.shell import inspect_response
-        # inspect_response(response, self)
+        
 
     def parsePage(self, response):
         data = dict()
         title = response.xpath('//h1[@class="product_info_name"]//text()').get()
         price = response.xpath('//span[@class="nk-price-final"]//text()').get()
         url = response.request.url
+        img = response.xpath('//ul[@class="nk-product-bigImg"]/li/div/img/@src').get()
         description = response.xpath('//tbody[@id="custom-scroll-popup-tskt"]//text()').getall()
 
         t, d =[], []
@@ -36,6 +36,7 @@ class NguyenKimeSpider(scrapy.Spider):
         data['title'] = title
         data['price'] = price
         data['url'] = url
+        data['img'] = img
 
         for i in range(len(t)):
             data[t[i]] = d[i]

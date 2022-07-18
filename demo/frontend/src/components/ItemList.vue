@@ -3,7 +3,7 @@
   <div class="list" v-for="device in deviceList" v-bind:key="device.name">
   <div class="container">
     <div class="images">
-      <img src="https://images-na.ssl-images-amazon.com/images/S/pv-target-images/02ef2b75bf6c39dec48c636c8dc9d0e4252601800eec9e15c8a266fc46150b00._RI_V_TTW_.jpg" />
+      <img :src="device.img" />
     </div>
     <div class="product">
       <h1>{{device.name}}</h1>
@@ -11,7 +11,7 @@
       <p class="desc">
         {{device.price}}
       </p>
-      <a :href="'http://localhost:8080/device/'+device._id">
+      <a :href="device.url">
         <div class="buttons">
           <button class="add">Truy cập</button>
         </div>

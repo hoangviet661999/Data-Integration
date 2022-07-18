@@ -94,7 +94,7 @@ deviceController.filter = async (req, res, next) => {
             let deviceList = await DeviceModel.find(
                 { 
                 name: { "$regex": name || "", "$options": "i"},
-                //price: {$lte: maxPrice || 1000000000, $gte: minPrice || 0},
+                price: {$lte: maxPrice*1000000 || 1000000000, $gte: minPrice*1000000 || 0},
                 brand: { "$regex": brand || "", "$options": "i"},
                 load_size: { "$regex": loadSize || "", "$options": "i"},
                 type: { "$regex": type || "", "$options": "i"},

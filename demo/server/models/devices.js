@@ -22,6 +22,12 @@ const deviceSchema = new Schema({
     },
     website: {
         type: String,
+    },
+    url: {
+        type: String,
+    },
+    img: {
+        type: String,
     }
 });
 
